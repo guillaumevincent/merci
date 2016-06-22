@@ -1,0 +1,27 @@
+version: '2'
+services:
+  db:
+    image: postgres:9.5
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  frontend:
+    build: ./frontend
+    ports:
+     - "8080:8080"
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes_from:
+      - backend
+    links:
+      - backend
+      - frontend
+volumes:
+  postgresql:
