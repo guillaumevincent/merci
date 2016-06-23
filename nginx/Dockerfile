@@ -1,4 +1,4 @@
-FROM nginx:1.8-alpine
+FROM nginx:1.10-alpine
 
 RUN rm /etc/nginx/nginx.conf
 RUN rm /etc/nginx/mime.types
