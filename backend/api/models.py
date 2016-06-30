@@ -67,13 +67,27 @@ class DateMixin(models.Model):
         abstract = True
 
 
-class Employee(DateMixin):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
-
-
 class Company(DateMixin):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255, unique=True)
-    employees = models.ManyToManyField(Employee)
 
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Company"
+        verbose_name_plural = "Companies"
+
+
+class Employee(DateMixin):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+
+    def __str__(self):
+
+        return '%s' % self.user.email
+
+    class Meta:
+        verbose_name = "Employee"
+        verbose_name_plural = "Employees"

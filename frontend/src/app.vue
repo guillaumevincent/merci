@@ -1,6 +1,6 @@
 <style lang="sass">
-    @import '../node_modules/bootstrap/scss/bootstrap.scss';
-    @import '../node_modules/ionicons/dist/css/ionicons.css';
+    @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+    @import '../node_modules/ionicons/dist/css/ionicons.min.css';
     @import '../node_modules/notie/dist/notie.css';
 
     * {

@@ -1,12 +1,9 @@
 from api import models
-from api.models import MyUser
-
 from django import forms
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
-from django.db.models import Count
 
 
 class UserCreationForm(forms.ModelForm):
@@ -14,7 +11,7 @@ class UserCreationForm(forms.ModelForm):
     password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
 
     class Meta:
-        model = MyUser
+        model = models.MyUser
         fields = ('email',)
 
     def clean_password2(self):
@@ -36,7 +33,7 @@ class UserChangeForm(forms.ModelForm):
     password = ReadOnlyPasswordHashField()
 
     class Meta:
-        model = MyUser
+        model = models.MyUser
         fields = ('email', 'password', 'is_active', 'is_admin')
 
     def clean_password(self):
@@ -64,11 +61,11 @@ class MyUserAdmin(BaseUserAdmin):
     filter_horizontal = ()
 
 
-class EntryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user',)
-    search_fields = ('user__email',)
-    ordering = ('user',)
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = ('id', 'user', 'company',)
 
 
-admin.site.register(MyUser, MyUserAdmin)
+admin.site.register(models.MyUser, MyUserAdmin)
+admin.site.register(models.Employee, EmployeeAdmin)
+admin.site.register(models.Company)
 admin.site.unregister(Group)
