@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
+from django.db.models.signals import post_save
 
 
 class MyUserManager(BaseUserManager):
@@ -82,12 +83,20 @@ class Company(DateMixin):
 class Employee(DateMixin):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
-    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-
         return '%s' % self.user.email
 
     class Meta:
         verbose_name = "Employee"
         verbose_name_plural = "Employees"
+
+
+def create_employee(sender, **kwargs):
+    user = kwargs["instance"]
+    if kwargs["created"]:
+        Employee.objects.create(user=user)
+
+
+post_save.connect(create_employee, sender=MyUser)
