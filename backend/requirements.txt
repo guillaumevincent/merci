@@ -1,8 +1,8 @@
-Django==1.9.6
-djangorestframework==3.3.3
+Django==1.10
+djangorestframework==3.4.1
 djangorestframework-jwt==1.8.0
 smartconfigparser==0.1.1
-psycopg2==2.6.1
+psycopg2==2.6.2
 gunicorn==19.6.0
 djoser==0.5.0
 # tests
