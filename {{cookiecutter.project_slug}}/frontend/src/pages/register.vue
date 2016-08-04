@@ -1,11 +1,12 @@
 <template>
     <div id="login-page">
-        <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+        <div class="col-sm-6 offset-sm-3 col-lg-4 offset-lg-4">
             <div class="card card-block m-y-2">
                 <form v-on:submit.prevent="register">
                     <fieldset class="form-group">
-                        {{ $t('name') }}
+                        {{cookiecutter.project_name}}
                     </fieldset>
+                    {% raw %}
                     <fieldset class="form-group">
                         <p class="text-muted">
                             {{{ $t('login.RegisterInfo') }}}
@@ -22,12 +23,13 @@
                         <input type="password" class="form-control" id="password" name="password"
                                v-model="user.password" placeholder="{{ $t('login.PasswordPlaceholder') }}">
                     </fieldset>
-                    <button id="buttonSubmit" name="buttonSubmit" type="submit" class="btn btn-primary btn-block">
+                    <button id="buttonSubmit" name="buttonSubmit" type="submit" class="btn btn-success btn-block">
                         {{ $t('login.Register') }}
                     </button>
                     <fieldset class="form-group p-t-1">
                         <a v-link="{ path: '/login/'}"><u>{{ $t('login.orLogIn') }}</u></a>
                     </fieldset>
+                    {% endraw %}
                 </form>
             </div>
         </div>

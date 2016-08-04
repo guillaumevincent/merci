@@ -89,4 +89,9 @@ ENV/
 # Rope project settings
 .ropeproject
 *.sqlite3
-.idea
+
+# Project Settings
+frontend/node_modules/
+!frontend/dist/
+backend/www/
+backend/config/

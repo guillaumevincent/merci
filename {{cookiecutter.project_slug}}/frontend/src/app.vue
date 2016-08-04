@@ -63,7 +63,6 @@
     </div>
 </template>
 <script type="text/ecmascript-6">
-    import 'bootstrap/dist/js/umd/collapse.js';
     import Sidebar from './components/sidebar';
     import auth from './services/auth';
 

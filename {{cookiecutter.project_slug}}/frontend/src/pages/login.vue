@@ -1,11 +1,12 @@
 <template>
     <div id="login-page">
-        <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+        <div class="col-sm-6 offset-sm-3 col-lg-4 offset-lg-4">
             <div class="card card-block m-y-2">
                 <form v-on:submit.prevent="login" name="loginForm">
                     <fieldset class="form-group">
-                        {{ $t('name') }}
+                        {{cookiecutter.project_name}}
                     </fieldset>
+                    {% raw %}
                     <fieldset class="form-group">
                         <p class="text-muted">
                             {{{ $t('login.LogInInfo') }}}
@@ -29,6 +30,7 @@
                     <fieldset class="form-group p-t-1">
                         <a v-link="{ path: '/register/'}"><u>{{ $t('login.orRegister') }}</u></a>
                     </fieldset>
+                    {% endraw %}
                 </form>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <template>
     <div id="login-page">
-        <div class="col-sm-4 col-sm-offset-4">
+        <div class="col-sm-4 offset-sm-4">
             <div class="card card-block">
                 <h4 class="card-title">Reset Password</h4>
                 <p class="card-text">Enter your email to received an email with password reset link.</p>

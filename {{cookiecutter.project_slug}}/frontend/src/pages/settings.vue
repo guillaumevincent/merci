@@ -1,3 +1,4 @@
+{% raw %}
 <template>
     <div id="settings-page">
         <div class="row">
@@ -60,4 +61,4 @@
         }
     }
 </script>
-
+{% endraw %}

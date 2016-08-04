@@ -1,19 +1,15 @@
 const locales = {
-  en: {lang: 'en', name: 'Merci'},
-  fr: {lang: 'fr', name: 'Merci'}
+  en: {lang: 'en'},
+  fr: {lang: 'fr'}
 };
 
 locales.en.index = {
-  LOGIN: 'LOGIN',
-  REGISTER: 'REGISTER',
-  title: 'Take your passwords with you',
-  subtitle: 'Stop wasting time synchronize your encrypted vault. Remember one master password to access your passwords, anywhere, anytime. No sync needed.'
+  SIGNIN: 'SIGN IN',
+  REGISTER: 'REGISTER'
 };
 locales.fr.index = {
-  LOGIN: 'CONNEXION',
-  REGISTER: 'INSCRIPTION',
-  title: 'Emmenez tous vos mots de passe avec vous',
-  subtitle: 'Arrêtez de perdre du temps à synchroniser vos coffres-forts chiffrés. Mémorisez un mot de passe fort pour retrouver tous vos mots de passe, partout, à tout moment. Pas besoin de synchronisation.'
+  SIGNIN: 'CONNEXION',
+  REGISTER: 'INSCRIPTION'
 };
 
 locales.en.footer = {
@@ -37,11 +33,11 @@ locales.en.login = {
   RegisterInfo: 'Create an account :',
   registerSuccess: 'Thank you for being registered, you can now login.',
   registrationInvalidNotAnEmail: 'Your email is not a valid email address.',
-  registrationInvalidUserAlreadyExists: 'You already have an account. Do you want to <a href="/#!/login/"><b>log in</b></a>?',
+  registrationInvalidUserAlreadyExists: 'You already have an account. Do you want to <a href="/#!/login/"><b>sign in</b></a>?',
   registrationInvalid: 'The information you provided are invalid.',
   logoutMessage: 'Thanks for spending some quality time with us today.',
-  orLogIn: 'Already register ? log in',
-  orRegister: 'Do not have an account ? Sign in',
+  orLogIn: 'Already register ? Sign in',
+  orRegister: 'Do not have an account ? Register',
   LogInInfo: 'Happy to see you here again',
   emailAndPasswordMandatory: 'Email and password are mandatory'
 };

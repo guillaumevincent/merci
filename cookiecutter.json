@@ -1,0 +1,17 @@
+{
+  "project_name": "My Super Project",
+  "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_') }}",
+  "full_name": "Firstname Lastname",
+  "hostname": "example.org",
+  "email": "{{ 'contact@%s' % cookiecutter.hostname }}",
+  "project_short_description": "",
+  "year": "2016",
+  "version": "0.0.1",
+  "open_source_license": [
+    "MIT",
+    "BSD",
+    "GPLv3",
+    "Apache Software License 2.0",
+    "Not open source"
+  ]
+}
